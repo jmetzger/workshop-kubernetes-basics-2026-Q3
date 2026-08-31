@@ -9,7 +9,7 @@ auch in Commits, Dateien und Issues keinen Kundennamen nennen.
 
 Vollstaendige Kopie von `training-kubernetes-einfuehrung` (Stand 31.08.2026),
 nur der README-Titel wurde angepasst. Die README.md ist die Agenda; sie enthaelt
-noch die komplette Einfuehrungs-Agenda und kann fuer die 2,5 Basics-Tage
+noch die komplette Einfuehrungs-Agenda und kann fuer die 2 Basics-Trainingstage
 (Container & Cloud-native, Kubernetes-Einstieg/Architektur/kubectl,
 Pods/Deployments/StatefulSets/Jobs, Storage & ConfigMaps/Secrets,
 Netzwerke/Services/Ingress, Helm, Troubleshooting) noch gestrafft werden.

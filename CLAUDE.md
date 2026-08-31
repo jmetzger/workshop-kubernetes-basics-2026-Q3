@@ -1,21 +1,33 @@
-# training-kubernetes-einfuehrung
+# CLAUDE.md - workshop-kubernetes-basics-2026-Q3
 
-Kubernetes-Einführungs-Workshop mit Übungen und Exercises.
+## Was ist das hier
 
-## Secrets-Handling
+Trainings-Repo "Kubernetes - Modul Basics" (2 Trainingstage) fuer ein
+Inhouse-Training im September 2026. Schwester-Repo: `workshop-kubernetes-advanced-2026-Q3`
+(Modul Advanced). Dieses Repo ist PUBLIC und enthaelt bewusst keinen Kundenbezug -
+auch in Commits, Dateien und Issues keinen Kundennamen nennen.
 
-- Secrets werden mit SOPS + Age verschlüsselt
-- Plain `.env` niemals committen — liegt in `.gitignore`
-- Verschlüsselte Secrets: `.env.enc` (mit SOPS)
-- Age-Key: `~/.age/key.txt`
+Vollstaendige Kopie von `training-kubernetes-einfuehrung` (Stand 31.08.2026),
+nur der README-Titel wurde angepasst. Die README.md ist die Agenda; sie enthaelt
+noch die komplette Einfuehrungs-Agenda und kann fuer die 2,5 Basics-Tage
+(Container & Cloud-native, Kubernetes-Einstieg/Architektur/kubectl,
+Pods/Deployments/StatefulSets/Jobs, Storage & ConfigMaps/Secrets,
+Netzwerke/Services/Ingress, Helm, Troubleshooting) noch gestrafft werden.
 
-### Entschlüsseln auf neuem Rechner
+Aenderungen an Uebungen bitte HIER machen, nicht im Quell-Repo -
+dieses Repo ist die fuer das Training massgebliche Kopie.
 
-```bash
-sops --decrypt --input-type dotenv --output-type dotenv .env.enc > .env
-```
+## Trainingsumgebung
 
-## Workshop-Struktur
+- GETEILTER Trainingscluster fuer alle Teilnehmer (DOKS + Bastion-Client).
+- Namespace-Strategie daher: `<prefix>-<dein-name>` (z.B. `resource-<dein-name>`),
+  Namespace beim `kubectl apply -n ...` angeben, nicht im Manifest.
+- Zugang per Putty/SSH oder Chrome (Guacamole) auf Bastion-Client.
 
-- Exercises in `exercises/`
-- Alle Übungen sind nummeriert und eigenständig
+## Konventionen (Kurzfassung Skill workshop-training)
+
+- Keine Umlaute in neuen Dateien (ae/oe/ue/ss), Dateiendung `.yml`, Manifests nummerieren.
+- Code-Bloecke ohne Sprach-Annotation.
+- Neue Uebungen MUESSEN auf einem echten Cluster getestet werden, bevor sie in die Agenda kommen.
+- Jede neue Uebung in der README-Agenda verlinken.
+- PDF: `gh workflow run pdf-deployment.yml --repo jmetzger/github-md2pdf --field repository=workshop-kubernetes-basics-2026-Q3`
